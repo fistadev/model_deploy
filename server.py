@@ -17,7 +17,7 @@ model = load_model()
 
 def server():
     HOST = '127.0.0.1'
-    PORT = 5007
+    PORT = 5008
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # TCP SOCKET
     s.bind((HOST, PORT))
