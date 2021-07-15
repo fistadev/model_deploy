@@ -1,14 +1,15 @@
 import socket
-from server import server
+import numpy as np
 
 
-# server = server()
-data = server()
+lst = [5.1, 3.5, 1.4, 0.2]
+a = np.array(lst)
+a = a.tobytes()
 
 
 def client():
     HOST = '127.0.0.1'
-    PORT = 5005
+    PORT = 5007
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((HOST, PORT))
     print('Client connected.')
@@ -16,7 +17,10 @@ def client():
         user_input = str(input())
         if user_input == "exit":
             break
-        mess = user_input.encode()
-        s.sendall(mess)
+        # mess = user_input.encode()
+        s.sendall(a)
 
     return s
+
+
+client()

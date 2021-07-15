@@ -5,14 +5,6 @@ import pickle
 
 app = Flask(__name__)
 
-# load the model from disk
-
-
-def load_model():
-    filename = 'iris_model.pkl'
-    loaded_model = pickle.load(open(filename, 'rb'))
-    return loaded_model
-
 
 @app.route("/")
 def index():

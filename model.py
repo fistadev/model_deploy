@@ -15,6 +15,8 @@ df_iris.keys()
 df = pd.DataFrame(df_iris.data, columns=[
                   'sepal length', 'sepal width', 'petal length', 'petal width'])
 
+print(df.head())
+
 y = df_iris.target
 X = df
 
@@ -29,7 +31,7 @@ def train():
         pred_r = clf_r.predict(X_test)
         acc = sum((y_test-pred_r) == 0) / len(pred_r)
     print(acc)
-    return pred_r
+    return clf_r
 
 
 model = train()
