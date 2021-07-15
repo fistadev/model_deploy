@@ -5,8 +5,9 @@ from sklearn.datasets import make_classification
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split, cross_validate
-
 from sklearn.datasets import load_iris
+import pickle
+
 
 df_iris = load_iris()
 df_iris.keys()
@@ -30,7 +31,9 @@ def train():
     print(acc)
     return pred_r
 
-# iris_model = RandomForestRegressor(random_state=1)
-# iris_model.fit(X_train, y_train)
-# iris_preds = iris_model.predict(X_test)
-# print(mean_absolute_error(y_test, acc))
+
+model = train()
+
+# save model
+with open('./iris_model.pkl', 'wb') as file:
+    pickle.dump(model, file)
