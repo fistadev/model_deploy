@@ -22,6 +22,6 @@ def client():
         if user_input == "exit":
             break
         mess = user_input.encode()
-        # cypher = rsa.encrypt(mess, server_public_key)
         s.sendall(mess)
+
     return s, train_model
