@@ -1,9 +1,9 @@
 import socket
-from server import server, load_model
+from server import server
 
 
-server = server()
-data = load_model.read()
+# server = server()
+data = server()
 
 
 def client():
@@ -19,4 +19,4 @@ def client():
         mess = user_input.encode()
         s.sendall(mess)
 
-    return s,
+    return s

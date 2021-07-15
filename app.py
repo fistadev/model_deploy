@@ -1,22 +1,28 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
 import pickle
-# import client
+# from client import *
+
 
 app = Flask(__name__)
 
-# client = client()
+# load the model from disk
 
 
-# Get model and predict
-
-# loaded_model = prepro.load_model()
-# pred = loaded_model.predict(x_test)
+def load_model():
+    filename = 'iris_model.pkl'
+    loaded_model = pickle.load(open(filename, 'rb'))
+    return loaded_model
 
 
 @app.route("/")
 def index():
 
     return render_template("index.html")
+
+
+@app.route('/model_page')
+def model():
+    return Response(load_model())
 
 
 if __name__ == '__main__':
