@@ -31,8 +31,9 @@
                         <p>Here is the prediction: </p>
 
                         {% if client %}
-                        {{ client }}
+                        {{ s | safe}}
                         {% endif %}
+
                     </div>
                 </div>
             </div>
