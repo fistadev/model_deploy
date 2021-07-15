@@ -3,13 +3,13 @@ import os
 import pickle
 import numpy as np
 
-# load the model from disk
-
 
 def load_model():
-    filename = 'iris_model.pkl'
+    filename = './iris_model.pkl'
     loaded_model = pickle.load(open(filename, 'rb'))
     return loaded_model
+
+# load_model()
 
 
 model = load_model()
@@ -38,6 +38,7 @@ def server():
 
         print(pred)
 
-
     # return decoded_data
+
+
 server()

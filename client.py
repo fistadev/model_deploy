@@ -1,10 +1,10 @@
 import socket
 import numpy as np
-from model import X_test
+# from model import X_test
 
 
 lst = [5.1, 3.5, 1.4, 0.2]
-a = np.array(X_test)
+a = np.array(model)
 a = a.tobytes()
 
 
