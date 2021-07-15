@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Response
 import pickle
-# from client import *
+from client import *
 
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ def index():
 
 @app.route('/model_page')
 def model():
-    return Response(load_model())
+    return Response(client())
 
 
 if __name__ == '__main__':
