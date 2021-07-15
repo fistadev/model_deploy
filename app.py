@@ -1,9 +1,9 @@
 from flask import Flask, render_template
-import client
+# import client
 
 app = Flask(__name__)
 
-client = client()
+# client = client()
 
 
 @app.route("/")
