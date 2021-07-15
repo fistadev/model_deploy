@@ -1,14 +1,9 @@
 import socket
-import model
-# import rsa
-# from colorama import Fore
+from server import server, load_model
 
-train_model = train()
 
-data = train_model.read()
-
-# with open("./public.pem", "rb") as f:
-# server_public_key = rsa.PublicKey.load_pkcs1(data)
+server = server()
+data = load_model.read()
 
 
 def client():
@@ -24,4 +19,4 @@ def client():
         mess = user_input.encode()
         s.sendall(mess)
 
-    return s, train_model
+    return s,
