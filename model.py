@@ -31,11 +31,12 @@ def train():
         pred_r = clf_r.predict(X_test)
         acc = sum((y_test-pred_r) == 0) / len(pred_r)
     print(acc)
+    print(pred_r)
     return clf_r
 
 
 model = train()
-
+print(model.predict(X_test))
 # save model
 with open('./iris_model.pkl', 'wb') as file:
     pickle.dump(model, file)
