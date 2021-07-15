@@ -10,7 +10,7 @@ from model import X_test
 
 def client():
     HOST = '127.0.0.1'
-    PORT = 5007
+    PORT = 5010
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((HOST, PORT))
     print('Client connected.')
@@ -19,9 +19,6 @@ def client():
         if user_input == "exit":
             break
         mess = user_input.encode()
-        s.sendall(mess(a))
-   
+        s.sendall(mess)
+
     return s
-
-
-client()
