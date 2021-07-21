@@ -18,4 +18,4 @@ def model():
 
 
 if __name__ == '__main__':
-    app.run("88.1.56.23",  port=5011)
+    app.run("127.0.0.1",  port=5011, debug=True)
