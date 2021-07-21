@@ -9,7 +9,7 @@ a = a.tobytes()
 
 
 def client():
-    HOST = '88.1.56.23'
+    HOST = '127.0.0.1'
     PORT = 5011
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((HOST, PORT))
