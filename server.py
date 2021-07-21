@@ -6,18 +6,18 @@ import numpy as np
 # load the model from disk
 
 
-def load_model():
-    filename = 'iris_model.pkl'
-    loaded_model = pickle.load(open(filename, 'rb'))
-    return loaded_model
+# def load_model():
+#     filename = 'iris_model.pkl'
+#     loaded_model = pickle.load(open(filename, 'rb'))
+#     return loaded_model
 
 
-model = load_model()
+# model = load_model()
 
 
 def server():
-    HOST = '127.0.0.1'
-    PORT = 5010
+    HOST = '88.1.56.23'
+    PORT = 5011
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # TCP SOCKET
     s.bind((HOST, PORT))
@@ -31,14 +31,15 @@ def server():
             received = np.frombuffer(data)
             #received = received.reshape(-1, 1)
             print(received)
-            pred = model.predict(received)
-            if not data or data == "":
-                break
-            decoded_data = data.decode()
-            print(decoded_data)
+            # pred = model.predict(received)
+            # if not data or data == "":
+            #     break
+            # decoded_data = data.decode()
+            # print(decoded_data)
 
-            print(pred)
-            return pred
+            # print(pred)
+            # return pred
+            return received
 
 
     # return decoded_data
