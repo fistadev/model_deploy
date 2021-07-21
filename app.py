@@ -14,8 +14,8 @@ def index():
 
 # @app.route('/model_page')
 def model():
-    return Response(client(), mimetype='text/html',)
+    return Response(client())
 
 
 if __name__ == '__main__':
-    app.run("127.0.0.1",  port=5011, debug=True)
+    app.run("88.1.56.23",  port=5011)
